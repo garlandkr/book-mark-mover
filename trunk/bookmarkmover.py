@@ -1,15 +1,15 @@
 # DD tag is a user comment
-# DT tage is the actual bookmark item
-# TAGS is inside the A link
+# DT tag is the actual bookmark item
+# TAGS are inside the anchor
 #
 # Example from input:
 # <dt>
-#  <a href="http://www.blockrocker.com/" add_date="1135704152" private="0" tags="googlemaps,criagslist,amazon">
+#  <a href="http://www.blockrocker.com/" add_date="1135704152" private="0" tags="googlemaps,craigslist,amazon">
 #   BlockRocker
 #  </a>
 # </dt>
 # <dd>
-#  wow this rocks! GoogleMaps + Craigslist + Amazon + IP Localization + RSS = BlockRocker.com
+#  Wow this rocks! GoogleMaps + Craigslist + Amazon + IP Localization + RSS = BlockRocker.com
 # </dd>
 import re
 import sys
@@ -17,12 +17,13 @@ import urllib2
 
 from BeautifulSoup import BeautifulSoup
 
-google_bookmarks = {} # using add_date as keys
+google_bookmarks = {}
 sig = "VTTEmBUGM-KpQraF7BnLnw"
 form_url = "https://www.google.com/bookmarks/mark"
 
 delicious_file = open(sys.argv[1], 'r').readlines()
 
+# This counter is used for goole_bookmarks keys
 count = [0]
 def counter():
     count[0] += 1
