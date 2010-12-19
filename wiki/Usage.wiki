@@ -1,4 +1,5 @@
 #summary Usage examples.
+#labels usage,examples
 
 = Introduction =
 
