@@ -22,13 +22,14 @@ sig = "VTTEmBUGM-KpQraF7BnLnw"
 form_url = "https://www.google.com/bookmarks/mark"
 
 delicious_file = open(sys.argv[1], 'r').readlines()
-
-# This counter is used for goole_bookmarks keys
 count = [0]
+
+
 def counter():
+    """ This counter is used for goole_bookmarks keys """
     count[0] += 1
 
-for line in temp_file:
+for line in delicious_file:
     soup = BeautifulSoup(line)
     counter()
     if re.search("<DT>", line):
